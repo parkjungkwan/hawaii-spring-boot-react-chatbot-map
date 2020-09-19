@@ -1,0 +1,16 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chatbot.web.mappers.CarMapper">
+    <select id="selectOne" parameterType="com.chatbot.web.car.Car"
+                            resultType="com.chatbot.web.car.Car">
+        SELECT * FROM car WHERE carName LIKE #{carName} OR employee like #{carName}
+    </select>
+
+    <select id="selectAll" parameterType="com.chatbot.web.car.Car"
+            resultType="com.chatbot.web.car.Car">
+        SELECT * FROM car LIMIT 5
+    </select>
+
+
+</mapper>
